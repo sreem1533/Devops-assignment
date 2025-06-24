@@ -1,7 +1,6 @@
+### 📘 Service 2 – Python Flask API
 
-### 📘 Service 1 – Golang API
-
-This is a lightweight HTTP service written in Go. It serves two endpoints: `/ping` and `/hello`. It is designed to be used behind a reverse proxy like Nginx.
+This is a lightweight HTTP service written in Python using Flask. It exposes two simple endpoints and is designed to be used behind a reverse proxy like Nginx.
 
 ---
 
@@ -9,8 +8,8 @@ This is a lightweight HTTP service written in Go. It serves two endpoints: `/pin
 
 | Method | Path     | Description      | Response Example                      |
 | ------ | -------- | ---------------- | ------------------------------------- |
-| GET    | `/ping`  | Health check     | `{"status": "ok", "service": "1"}`    |
-| GET    | `/hello` | Greeting message | `{"message": "Hello from Service 1"}` |
+| GET    | `/ping`  | Health check     | `{"status": "ok", "service": "2"}`    |
+| GET    | `/hello` | Greeting message | `{"message": "Hello from Service 2"}` |
 
 ---
 
@@ -18,31 +17,31 @@ This is a lightweight HTTP service written in Go. It serves two endpoints: `/pin
 
 #### Prerequisites
 
-* Go 1.22+
-* Docker (optional, for containerized setup)
+* uv - https://docs.astral.sh/uv/getting-started/installation/
 
-#### Run with Go:
+#### Run with Python:
 
 ```bash
-go run main.go
+uv run app.py
 ```
 
-This will start the server on port `8001`.
+This will start the server on port `8002`.
 
 ---
 
 
 Then visit:
 
-* [http://localhost:8001/ping](http://localhost:8001/ping)
-* [http://localhost:8001/hello](http://localhost:8001/hello)
+* [http://localhost:8002/ping](http://localhost:8002/ping)
+* [http://localhost:8002/hello](http://localhost:8002/hello)
 
 ---
 
 ### 📂 Project Structure
 
 ```
-service1/
-├── main.go
+service2/
+├── Dockerfile
+├── app.py
 └── README.md
 ```
